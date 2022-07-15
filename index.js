@@ -36,7 +36,7 @@ app.use(express.json());
 app.use("/users", require('./routes/users.routes'));
 
 app.use(errors.errorHandler);
-
-app.listen(process.env.port || 8000, function(){
+var port_number = server.listen(process.env.PORT || 8000);
+app.listen(port_number, function(){
     console.log('Ready to go');
 });
