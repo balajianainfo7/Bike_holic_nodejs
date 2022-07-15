@@ -1,12 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dbConfig = require('./config/db.config');
-
+const app = express();
+const http = require("http");
+const server = http.createServer(app);
 const auth = require('./middlewares/auth');
 const errors = require('./middlewares/error');
 const {unless} = require('express-unless');
 
-const app = express();
+
 
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.db, {
@@ -36,7 +38,6 @@ app.use(express.json());
 app.use("/users", require('./routes/users.routes'));
 
 app.use(errors.errorHandler);
-var port_number = server.listen(process.env.PORT || 8000);
-app.listen(port_number, function(){
+server.listen(process.env.PORT || 8000 , function(){
     console.log('Ready to go');
 });
