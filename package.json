@@ -17,6 +17,7 @@
     "lodash": "^4.17.21",
     "mongoose": "^6.4.4",
     "mongoose-unique-validator": "^3.1.0",
+    "otp-generator": "^3.0.0",
     "yargs": "^17.5.1"
   }
 }

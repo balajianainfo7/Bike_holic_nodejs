@@ -5,6 +5,9 @@ const routes = express.Router();
 
 routes.post("/register", userController.register);
 routes.post("/login", userController.login);
-routes.post("/xuser-profile", userController.userProfile);
+routes.get("/user-profile", userController.userProfile);
+routes.post("/otpLogin", userController.otpLogin);
+routes.post("/verifyOtp", userController.verifyOtp);
+
 
 module.exports = routes;
